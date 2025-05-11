@@ -58,23 +58,23 @@ https://slime-face-7c4.notion.site/2023-1f0eeaa2f0af802ebe9ece38cc503e4d?pvs=4
 ## 🛠️ 기술 스택
 
 ### 🔹 Frontend
-#E34F26
-- CSS3  
-- Bootstrap  
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 ### 🔹 Backend
-- Python  
-- Django  
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
 
 ### 🔹 Hardware & Sensor
-- Arduino R4 WiFi  
+![Arduino](https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)
 - ECG Sensor (AD8232)  
 
 ### 🔹 Database
-- MySQL  
+![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
 ### 🔹 Server
-- Raspberry Pi 4B  
+![Raspberry Pi](https://img.shields.io/badge/-Raspberry_Pi-C51A4A?style=for-the-badge&logo=Raspberry-Pi) 
 - Raspbian OS  
 
 ---

@@ -1,0 +1,81 @@
+<!-- disease_checklist_app/templates/disease_checklist_app/disease_checklist.html -->
+{% extends 'page.html' %}
+<html lang="ko-kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    {% block title %}
+    <h1 id="title">심장 질환 모니터링</h1>
+    {% endblock title %}
+
+    {% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <h2> 건강 체크 </h2>
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            {{ user.last_name }}{{ user.first_name }}님
+        </div>
+    </nav>
+    <table class="table table-hover" id="myTable" border="1" cellspacing="0" summary="진단기록">
+        <colgroup>
+
+            <col width = "30">
+            <col width = "300">
+            <col width = "170">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>질문사항</th>
+                <th>답변 (예, 아니오)</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in logs %}
+            {% if not request.GET.q or log.login.user.username|lower in request.GET.q|lower %}
+            <tr>
+                <td>{{ log.login.user.last_name }} {{ log.login.user.first_name }}</td>
+                <td>{{ log.login.user.username }}</td>
+                <td>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">1</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">2</label>
+                      </div>
+                </td>
+            </tr>
+            <tr>
+                <td>{{ log.login.user.last_name }} {{ log.login.user.first_name }}</td>
+                <td>{{ log.login.user.username }}</td>
+                <td>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">1</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">2</label>
+                      </div>
+                </td>
+            </tr>
+
+            {% endif %}
+            {% empty %}
+            <tr>
+                <td colspan="6">No login/logout logs found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+</body>
+</html>

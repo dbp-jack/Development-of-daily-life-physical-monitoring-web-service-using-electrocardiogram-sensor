@@ -1,0 +1,104 @@
+{% extends 'page.html' %}
+<html lang="ko-kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    {% block title %}
+    <h1 id="title">심장 질환 모니터링</h1>
+    {% endblock title %}
+
+    {% block content %}
+    <h2> 질병 및 질환 정보 </h2>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              부정맥
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">원인 : 심장의 선천적인 이상. 담배, 술, 카페인, 다른 심장 질환, 갑상선 질환, 비만, 수면무호흡증, 고령, 유전적 부정맥 등</div>
+            <div class="accordion-body">증상 : 자신의 심장박동을 느낀다, 가슴 두근거림, 흉통, 실신, 돌연사, 호흡곤란, 현기증 등</div>
+            <div class="accordion-body">예방법 : 금연, 금주, 가족력 확인, 주기적인 검진, 스트레스 해소, 적당한 운동</div>
+            <div class="accordion-body">치료법 : 원인교정, 약물치료, 제세동기, 삽입형 제세동기, 인공 심장 박동기, 전극도자 절제술, 외곽적 절제술, 항혈소판제, 항응고제</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              심부전
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">원인 : 심장혈관 질환, 심장근육질환, 고혈압, 판막 질환, 빈맥, 과음, 스트레스, 출산전후</div>
+            <div class="accordion-body">증상 : 호흡곤란, 발작성 야간 호흡곤란, 식욕부진, 악액질(만성 영양불량), 혼돈, 우울, 불안</div>
+            <div class="accordion-body">예방법 : 저염식, 금연, 금주, 규칙적 유산소 운동, 고지혈증 체크</div>
+            <div class="accordion-body">치료법 : Swan-Ganzcatheter 시술, 안지오텐신 전환효소 억제제, 안지오텐신2 수용체 차단제, 베타 차단제, 알도스테론 길항제, 이뇨제, 질산염 및 하이드랄라진 등의 혈관 확장제, 디곡신, 도뷰타민, 강심제</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              협심증
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">원인 : 심장이 산소와 영양분을 공급받는 관상동맥의 내피세포가 손상되고 기능이 떨어지며 협착에 의해 혈류가 원활하지 않아 생기게 된다.</div>
+            <div class="accordion-body">증상 : 흉통, 가슴이 쥐어짠다, 가슴이 싸한 느낌이 든다, 명치가 아프다, 턱끝이 아프다, 속이 아프다, 가슴이 쓰리다, 호흡곤란, 실신</div>
+            <div class="accordion-body">예방법 : 금연, 고혈압 체크, 당뇨 체크, 가족력 체크, 고령 체크 등</div>
+            <div class="accordion-body">치료법 : 심혈관성형술, 스텐트삽입술, 아스피린, 혈압약, 고지혈증 약, 혈당강하제, 니트로글리세린 등</div>
+          </div>
+        </div>
+    
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                고혈압
+              </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">원인 : 운동을 적게하는 생활습관, 스트레스, 복부비만, 칼륨 결핍, 비만, 염분에 대한 민감도 증가, 알코올 섭취, 비타민D 결핍, 갑상선 기능 항진증, 신장질환, 경구 피임제 복용, 레닌을 분비하는 종양 보유, 유전</div>
+              <div class="accordion-body">증상 : 높은 혈압, 심장 근육이 비대해지며 뻣뻣해짐, 호흡곤란, 흉부 불편감, 하지 등의 부종, 안구 내의 미세혈관이 좁아짐</div>
+              <div class="accordion-body">예방법 : 바른 식습관, 주기적인 혈압 측정, 과한 운동 피하기</div>
+              <div class="accordion-body">치료법 : 저염식, 이뇨제, 아드레날린 차단제, 혈관확장제, 칼슘차단제, 안지오텐신2효소 억제제</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                급성심근경색
+              </button>
+            </h2>
+            <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">원인 : 두 심장에 산소와 영양분을 공급하는 관동맥이 막히거나 좁아져서 생긴다.</div>
+              <div class="accordion-body">증상 : 가슴 한가운데에 누르듯, 조이는 듯한 통증이 30분이상 지속된다.</div>
+              <div class="accordion-body">예방법 : 금연, 금주, 식습관 관리, 스트레스 해소, 운동</div>
+              <div class="accordion-body">치료법 : 약물(혈전 용해제), 풍선을 이용한 시술(관동맥 풍선확장술)</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                심장성 색전에 의한 뇌경색(심장성 색전 뇌졸중)
+              </button>
+            </h2>
+            <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">원인 : 심장 박동이 불규칙해서 심장벽이 부들부들 떨리거나, 심장 판막 이상이 있는 경우</div>
+              <div class="accordion-body">증상 : 편측마비, 언어장애, 시각장애, 어지럼증, 심한 두통, 일과성 허혈 발작, 혈종의 팽창, 뇌실 내출혈, 재출혈, 뇌부종, 수두증</div>
+              <div class="accordion-body">예방법 : 고혈압 체크, 금연, 당뇨병 체크, 심방세동, 이상지혈증, 식사와 영양, 신체활동 및 운동, 비만, 금주</div>
+              <div class="accordion-body">치료법 : 골든타임 안에 혈전 용해술, 혈전 제거술, 혈관 재개통 치료, 항혈전제</div>
+            </div>
+          </div>
+
+      </div>
+    {% endblock %}
+</body>
+</html>

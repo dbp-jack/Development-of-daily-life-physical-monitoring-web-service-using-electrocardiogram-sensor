@@ -1,0 +1,51 @@
+{% extends 'page.html' %}
+<html lang="ko-kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    {% block title %}
+    <h1 id="title">심장 질환 모니터링</h1>
+    {% endblock title %}
+
+    {% block content %}
+    <h2> 건강 기록 </h2>
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            {{ user.last_name }}{{ user.first_name }}님
+        </div>
+    </nav>
+    <table class="table table-hover" id="myTable" border="1" cellspacing="0" summary="진단기록">
+        <colgroup>
+            <col width = "50">
+            <col width = "50">
+            <col width = "30">
+            <col width = "50">
+            <col width = "300">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>진단 상태</th>
+                <th>(평균)심박수</th>
+                <th>건강상태</th>
+                <th>기록시간</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for avg in all_avgs %}
+            <tr>
+                <td>{{ avg.id }}</td>
+                <td>{{ avg.status }}</td>
+                <td>{{ avg.avg|floatformat:"-1" }}</td>
+                <td>{{ all_questions.first.status }}</td>
+                <td>{{ avg.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}
+</body>
+</html>

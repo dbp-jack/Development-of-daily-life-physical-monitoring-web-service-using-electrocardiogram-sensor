@@ -1,0 +1,11 @@
+/* 로그인 */
+.login { text-align: center; } 
+
+h1 {    font-size: 40px;
+        padding:10px;   }
+
+.form-group{    margin: 0;
+                padding:5px;}
+
+#button {   text-decoration: none;
+            padding:5px;  }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% extends 'page.html' %}
+<html lang="ko-kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    {% block title %}
+    <h1 id="title">심장 질환 모니터링</h1>
+    {% endblock title %}
+
+    {% block content %}
+    
+    <form id="questionsForm" method="post">
+        {% csrf_token %}
+        <h2> 건강 체크 </h2>
+
+        <table class="table table-hover" id="myTable" border="1" cellspacing="0" summary="진단기록">
+            <colgroup>
+    
+                <col width = "30">
+                <col width = "300">
+                <col width = "170">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>질문사항</th>
+                    <th>답변 (예, 아니오)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>{{ form.question1.label_tag }}</td>
+                    <td>{{ form.question1 }}</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>{{ form.question2.label_tag }}</td>
+                    <td>{{ form.question2 }}</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>{{ form.question3.label_tag }}</td>
+                    <td>{{ form.question3 }}</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>{{ form.question4.label_tag }}</td>
+                    <td>{{ form.question4 }}</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>{{ form.question5.label_tag }}</td>
+                    <td>{{ form.question5 }}</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>{{ form.question6.label_tag }}</td>
+                    <td>{{ form.question6 }}</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>{{ form.question7.label_tag }}</td>
+                    <td>{{ form.question7 }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-primary" type="submit">확인</button>
+    </form>
+
+    {% if result_message %}
+        <script>
+            alert("{{ result_message }}");
+            window.location.href = "{% url 'ecg:record' %}";
+        </script>
+    {% endif %}
+
+    {% endblock %}
+</body>
+</html>

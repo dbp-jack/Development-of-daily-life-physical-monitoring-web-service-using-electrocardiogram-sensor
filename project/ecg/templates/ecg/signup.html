@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- CSS only 부트스트랩 -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+            <!-- JavaScript Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+            <title>심장 질환 검사</title>
+        </head>
+    <style>
+        .error-text {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>회원가입</h2>
+    
+    <form method="post" action="{% url 'ecg:signup' %}">
+        {% csrf_token %}
+        
+        {{ signupForm.as_p }}
+        
+        <button type="submit">회원가입</button>
+    </form>
+    <a href="{% url 'ecg:login'%}" class="nav-link">뒤로가기</a>
+    <!-- Modal for Success -->
+    <div id="successModal" style="display: none;">
+        <p>Registration successful! You will be redirected to the login page.</p>
+    </div>
+
+    <!-- Modal for Error -->
+    <div id="errorModal" style="display: none;">
+        <p class="error-text" id="errorText"></p>
+    </div>
+
+    <script>
+        // Script to display modals
+        {% if request.method == "POST" %}
+            {% if signupForm.errors %}
+                // Display error modal with red text
+                document.getElementById("errorText").innerHTML = "{{ signupForm.errors }}";
+                document.getElementById("errorModal").style.display = "block";
+            {% else %}
+                // Display success modal
+                document.getElementById("successModal").style.display = "block";
+                // Redirect to the login page after a short delay
+                setTimeout(function(){
+                    window.location.href = "{% url 'ecg:login' %}";
+                }, 3000);
+            {% endif %}
+        {% endif %}
+    </script>
+</body>
+</html>

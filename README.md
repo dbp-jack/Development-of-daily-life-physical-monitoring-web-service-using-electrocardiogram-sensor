@@ -37,7 +37,7 @@ https://slime-face-7c4.notion.site/2023-1f0eeaa2f0af802ebe9ece38cc503e4d?pvs=4
 
 ---
 <details>
-<summary>🔧 트러블슈팅: 실시간 심전도 데이터 처리</summary>
+###🔧 트러블슈팅: 실시간 심전도 데이터 처리
 
 ### 🔍 문제 배경
 

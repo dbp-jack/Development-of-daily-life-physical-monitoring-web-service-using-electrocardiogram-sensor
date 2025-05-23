@@ -57,11 +57,19 @@ class UserDetailView(LoginRequiredMixin, DetailView):
         return self.request.user
 
 # 동적 차트
+
 @login_required
 def get_chart_data(request):
-    start_time = request.GET.get('start_time')
-    start_time = datetime.strptime(start_time, '%Y-%m-%dT%H:%M:%S.%fZ')
-    start_time = start_time.replace(tzinfo=timezone('UTC'))
+    start_time_str = request.GET.get('start_time')
+    if not start_time_str:
+        return JsonResponse({'data': []})
+
+    try:
+        start_time = datetime.strptime(start_time_str, '%Y-%m-%dT%H:%M:%S.%fZ')
+        start_time = start_time.replace(tzinfo=timezone('UTC'))
+    except ValueError:
+        return JsonResponse({'data': [], 'error': 'Invalid timestamp format'})
+
     data = ChartData.objects.filter(timestamp__gte=start_time).order_by('timestamp')
     data_values = [item.value for item in data]
     return JsonResponse({'data': data_values})
